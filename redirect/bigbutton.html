@@ -11,12 +11,17 @@
         const redirect_uri = document.getElementById("redirect_uri")
         mydiv.textContent = `myapp://auth?auth_callback=1&code=${code}`;
         mydiv.href = `myapp://auth?auth_callback=1&code=${code}`;
+        const link = document.createElement('a');
+        link.href = `myapp://auth?auth_callback=1&code=${code}`;
+        link.textContent = 'Return to App';         
+        const returndiv = document.getElementById("#returntoapp");
+        returndiv.appendChild(link);
     });
 </script>
 </head>
 <body>
     <div id="mydiv"></div>
-    <a id="redirect_uri" href="myapp://auth">Return to app</a>
+    <div id="returntoapp"></div>
 </body>
 </html>
 

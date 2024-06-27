@@ -14,7 +14,7 @@
         const link = document.createElement('a');
         link.href = `myapp://auth?auth_callback=1&code=${code}`;
         link.textContent = 'Return to App';         
-        const returndiv = document.getElementById("#returntoapp");
+        const returndiv = document.getElementById("returntoapp");
         returndiv.appendChild(link);
     });
 </script>

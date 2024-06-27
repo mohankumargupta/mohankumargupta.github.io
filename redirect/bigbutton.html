@@ -7,12 +7,14 @@
     document.addEventListener("DOMContentLoaded", ()=>{
         const params = new URLSearchParams(document.location.search);
         const code = params.get("code"); 
+        const state = params.get("state");
         const mydiv = document.getElementById("mydiv");
         const redirect_uri = document.getElementById("redirect_uri")
-        mydiv.textContent = `myapp://auth?auth_callback=1&code=${code}`;
-        mydiv.href = `myapp://auth?auth_callback=1&code=${code}`;
+        const fullurl = `myapp://auth?auth_callback=1&code=${code}&state=${state}`;
+        mydiv.textContent = fullurl;
+        mydiv.href = fullurl;
         const link = document.createElement('a');
-        link.href = `myapp://auth?auth_callback=1&code=${code}`;
+        link.href = fullurl;
         link.textContent = 'Return to App';         
         const returndiv = document.getElementById("returntoapp");
         returndiv.appendChild(link);

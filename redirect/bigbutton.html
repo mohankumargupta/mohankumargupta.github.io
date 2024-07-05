@@ -19,6 +19,16 @@
         const returndiv = document.getElementById("returntoapp");
         returndiv.appendChild(link);
     });
+
+    function returntoapp() {
+        const params = new URLSearchParams(document.location.search);
+        const code = params.get("code"); 
+        const state = params.get("state");
+        const mydiv = document.getElementById("mydiv");
+        const redirect_uri = document.getElementById("redirect_uri")
+        const fullurl = `myapp://auth?auth_callback=1&code=${code}&state=${state}`;
+        window.location.href = fullurl;        
+    }
 </script>
 <style>
     main {
@@ -73,7 +83,7 @@
             <span class="tick">✓</span>
             <span class="success">Correct.</span>
             <div class="div">
-                <button type="button" class="button">Return to App</button>
+                <button type="button" class="button" onclick="returntoapp()">Return to App</button>
             </div>
         </section>
     </main>    

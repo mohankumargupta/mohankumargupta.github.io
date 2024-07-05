@@ -20,10 +20,63 @@
         returndiv.appendChild(link);
     });
 </script>
+<style>
+    main {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+
+    .tick {
+        font-size: 48px;
+        color: green;
+        border: 2px solid lightgreen;
+        padding: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .success {
+        padding-left: 16px;
+        font-size: 32px;
+    }
+
+    .button {
+        background-color: #005bb3;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .div {
+        padding-top: 96px;
+    }
+</style>
 </head>
 <body>
     <div id="mydiv"></div>
     <div id="returntoapp"></div>
+
+    <main>
+        <section>
+            <span class="tick">✓</span>
+            <span class="success">Correct.</span>
+            <div class="div">
+                <button type="button" class="button">Return to App</button>
+            </div>
+        </section>
+    </main>    
 </body>
 </html>
 

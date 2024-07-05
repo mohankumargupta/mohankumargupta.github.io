@@ -4,22 +4,6 @@
     <link rel="redirect_uri" href="myapp://auth">
     <title>Document</title>
 <script>
-    document.addEventListener("DOMContentLoaded", ()=>{
-        const params = new URLSearchParams(document.location.search);
-        const code = params.get("code"); 
-        const state = params.get("state");
-        const mydiv = document.getElementById("mydiv");
-        const redirect_uri = document.getElementById("redirect_uri")
-        const fullurl = `myapp://auth?auth_callback=1&code=${code}&state=${state}`;
-        mydiv.textContent = fullurl;
-        mydiv.href = fullurl;
-        const link = document.createElement('a');
-        link.href = fullurl;
-        link.textContent = 'Return to App';         
-        const returndiv = document.getElementById("returntoapp");
-        returndiv.appendChild(link);
-    });
-
     function returntoapp() {
         const params = new URLSearchParams(document.location.search);
         const code = params.get("code"); 
@@ -75,9 +59,6 @@
 </style>
 </head>
 <body>
-    <div id="mydiv"></div>
-    <div id="returntoapp"></div>
-
     <main>
         <section>
             <span class="tick">✓</span>
